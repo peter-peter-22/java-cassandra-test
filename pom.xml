@@ -50,10 +50,16 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+        <!-- Liquibase Core -->
         <dependency>
-            <groupId>com.contrastsecurity</groupId>
-            <artifactId>cassandra-migration</artifactId>
-            <version>0.6</version>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+        </dependency>
+        <!-- Liquibase Cassandra Extension -->
+        <dependency>
+            <groupId>org.liquibase.ext</groupId>
+            <artifactId>liquibase-cassandra</artifactId>
+            <version>4.29.1</version>
         </dependency>
 	</dependencies>
 
