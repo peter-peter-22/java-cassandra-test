@@ -15,7 +15,7 @@ public class BlogController {
 
     @PostMapping
     public BlogPost create(@RequestBody BlogPost post) {
-        return service.createPost(post.title(), post.content());
+        return service.createPost(post.getTitle(), post.getContent());
     }
 
     @GetMapping("/{id}")
