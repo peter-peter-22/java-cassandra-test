@@ -5,6 +5,7 @@ import com.example.cassandra.service.BlogPostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -18,10 +19,29 @@ public class BlogController {
         return service.createPost(post.getTitle(), post.getContent());
     }
 
+    @GetMapping("/all")
+    public List<BlogPost> all() {
+        return service.getAll();
+    }
+
     @GetMapping("/{id}")
     public BlogPost get(@PathVariable UUID id) {
         return service.getPost(id);
     }
 
-    // Add update and delete endpoints similarly
+    @GetMapping("/search/{title}")
+    public List<BlogPost> search(@PathVariable String title) {
+        return service.findByTitle(title);
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable UUID id) {
+        service.deletePost(id);
+        return "Blogpost deleted";
+    }
+
+    @PutMapping("/{id}")
+    public BlogPost update(@PathVariable UUID id,@RequestBody BlogPost post){
+        return service.updatePost(id,post.getContent());
+    }
 }

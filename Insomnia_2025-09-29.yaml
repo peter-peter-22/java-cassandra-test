@@ -1,17 +1,17 @@
 type: collection.insomnia.rest/5.0
 name: Cassandra test
 meta:
-  id: wrk_8536099778714deaa92aaafdf5ff4cff
-  created: 1758977567797
-  modified: 1758980003045
+  id: wrk_77b3d9a6a88e4d2982ad2a1a2df7f22f
+  created: 1759353535553
+  modified: 1759353535553
   description: ""
 collection:
   - url: "{{ _.baseUrl }}/posts"
-    name: Create blog post
+    name: Create a blog post
     meta:
-      id: req_ebc733f1effc4f54b28a626da644f09c
+      id: req_41288d8db4ef434999b633ed5f091a87
       created: 1758977568182
-      modified: 1758980021335
+      modified: 1759534385498
       isPrivate: false
       description: ""
       sortKey: -1758977568182
@@ -37,16 +37,129 @@ collection:
         send: true
         store: true
       rebuildPath: true
+  - url: "{{ _.baseUrl }}/posts/052d2ab9-1bfd-4c29-8cc3-c61fc71ce3f6"
+    name: Get a blog post
+    meta:
+      id: req_bdf777748e184d72910af6bdc8f47761
+      created: 1759534200777
+      modified: 1759534391240
+      isPrivate: false
+      description: ""
+      sortKey: -1759534200780
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.baseUrl }}/posts/all"
+    name: Get all blog posts
+    meta:
+      id: req_1618116183c947638de68d995e303945
+      created: 1759534433030
+      modified: 1759534456517
+      isPrivate: false
+      description: ""
+      sortKey: -1759534433030
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.baseUrl }}/posts/ede5ad62-bebc-44ea-a6ac-1c4a86a3cd42"
+    name: Delete a blogpost
+    meta:
+      id: req_8f1f79d95c5447f78fd0954918ddaf14
+      created: 1759535562417
+      modified: 1759535804691
+      isPrivate: false
+      description: ""
+      sortKey: -1759535562417
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.baseUrl }}/posts/ede5ad62-bebc-44ea-a6ac-1c4a86a3cd42"
+    name: Update a blogpost
+    meta:
+      id: req_e5ecb33cc9c3421987f8ff7a573abaf6
+      created: 1759535618194
+      modified: 1759535697549
+      isPrivate: false
+      description: ""
+      sortKey: -1759535618194
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"content":"updated text"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.6.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.baseUrl }}/posts/search/Test Post"
+    name: Search
+    meta:
+      id: req_2e55d2616aa04fbab8e185ee6188c50a
+      created: 1759535879126
+      modified: 1759535954757
+      isPrivate: false
+      description: ""
+      sortKey: -1759535879126
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
 cookieJar:
   name: Default Jar
   meta:
-    id: jar_63a37a7536db7e103e2c1415810cbcff176965f5
+    id: jar_3b6b6d8edae9450e82077be581321f21
     created: 1758977567799
     modified: 1758977567799
 environments:
   name: Base Environment
   meta:
-    id: env_63a37a7536db7e103e2c1415810cbcff176965f5
+    id: env_c1aaf485c58b43579e3f9a786e5dd583
     created: 1758977567798
     modified: 1758977897931
     isPrivate: false

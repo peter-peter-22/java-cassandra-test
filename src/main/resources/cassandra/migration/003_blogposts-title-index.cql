@@ -1,0 +1,1 @@
+CREATE INDEX IF NOT EXISTS idx_blogposts_title ON blog_posts (title);

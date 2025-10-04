@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.cassandra.core.CassandraTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -26,15 +27,24 @@ public class BlogPostService {
         return repository.findById(id).orElse(null);
     }
 
-//    public void updatePost(UUID id, String newContent) {
-//        BlogPost post = getPost(id);
-//        if (post != null) {
-//            post.setContent(newContent);
-//            repository.save(post);
-//        }
-//    }
+    public BlogPost updatePost(UUID id, String newContent) {
+        BlogPost post = getPost(id);
+        if (post != null) {
+            post.setContent(newContent);
+            return repository.save(post);
+        }
+        return null;
+    }
 
     public void deletePost(UUID id) {
         repository.deleteById(id);
+    }
+
+    public List<BlogPost> getAll(){
+        return repository.findAll();
+    }
+
+    public List<BlogPost> findByTitle(String title){
+        return repository.findByTitle(title);
     }
 }
